@@ -21,6 +21,9 @@ function Terminal() {
     if (cmd === "hello") {
       return "caesar: Hi!";
     }
+    if (cmd === "clear") {
+      setCmds([]);
+    }
     return `caesar: command not found: ${cmd}`;
   };
 
