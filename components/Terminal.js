@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import Frame from "react-frame-component";
 import * as styles from "../styles/Terminal.module.scss";
 
 function Terminal() {
