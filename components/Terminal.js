@@ -48,8 +48,8 @@ function Terminal() {
 
   return (
     <div className={styles.terminal_container} ref={containerRef}>
-      {cmds.map((cmd) => (
-        <div key={`${cmd.date}-${cmd.text}`} className={styles.command}>
+      {cmds.map((cmd, index) => (
+        <div key={`${cmd.date}-${cmd.text}-${index}`} className={styles.command}>
           <p className={styles.code}>
             🦄 <span className={styles.terminalTimeStamp}>{cmd.time}</span> ✨{" "}
             {cmd.text}
