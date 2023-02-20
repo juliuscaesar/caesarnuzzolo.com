@@ -52,7 +52,7 @@ function Terminal() {
   };
 
   const handleKeypress = (e) => {
-    if (e.keyCode === 13) {
+    if (e.key === "Enter") {
       setCmds((cmds) => [
         ...cmds,
         {
