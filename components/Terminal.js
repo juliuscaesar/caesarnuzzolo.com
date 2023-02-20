@@ -56,6 +56,10 @@ function Terminal() {
 
   const handleKeypress = (e) => {
     if (e.key === "Enter") {
+      setCurrentCmd({
+        time: new Date().toLocaleTimeString(),
+        text: "",
+      })
       setCmds((cmds) => [
         ...cmds,
         {
