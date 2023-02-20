@@ -19,7 +19,7 @@ export default function Home() {
         <div className={styles.main}>
           <div className={styles.description}>
             <h1>
-              Hi, I'm <span className={styles.name}>Caesar</span>.
+              Hi, I&apos;m <span className={styles.name}>Caesar</span>.
             </h1>
           </div>
           <div className={styles.container}>
