@@ -1,9 +1,13 @@
 @function box-shadow($stars) {
-	$bxshadow: ();
-	@for $i from 1 to $stars {
-		$bxshadow: append($bxshadow, (random(2800) + 0px) (random(2800) + 0px) #fff, comma);
-	}
-	@return $bxshadow;
+  $bxshadow: ();
+  @for $i from 1 to $stars {
+    $bxshadow: append(
+      $bxshadow,
+      (random(2800) + 0px) (random(2800) + 0px) #fff,
+      comma
+    );
+  }
+  @return $bxshadow;
 }
 
 $bxshadow-large: box-shadow(25);
@@ -11,24 +15,24 @@ $bxshadow-medium: box-shadow(100);
 $bxshadow-small: box-shadow(150);
 
 .stars.large {
-	height: 3px;
-	width: 3px;
-	background: transparent;
-	box-shadow: $bxshadow-large;
+  height: 3px;
+  width: 3px;
+  background: transparent;
+  box-shadow: $bxshadow-large;
 }
 
 .stars.medium {
-	height: 2px;
-	width: 2px;
-	background: transparent;
-	box-shadow: $bxshadow-medium;
+  height: 2px;
+  width: 2px;
+  background: transparent;
+  box-shadow: $bxshadow-medium;
 }
 
 .stars.small {
-	height: 1px;
-	width: 1px;
-	background: transparent;
-	box-shadow: $bxshadow-small;
+  height: 1px;
+  width: 1px;
+  background: transparent;
+  box-shadow: $bxshadow-small;
 }
 
 .wrapper {
@@ -47,7 +51,8 @@ $bxshadow-small: box-shadow(150);
   height: 250px;
   border-radius: 50%;
   position: relative;
-  box-shadow: 0 0 35px 2px rgba(255,255,255,.15), inset -25px -5px 40px 20px rgba(0,0,0,.6);
+  box-shadow: 0 0 35px 2px rgba(255, 255, 255, 0.15),
+    inset -25px -5px 40px 20px rgba(0, 0, 0, 0.6);
 }
 
 .moon {
@@ -60,7 +65,8 @@ $bxshadow-small: box-shadow(150);
   left: 50%;
   transform: translate(-50%, -50%);
   animation: 5s ease-in-out 0s normal none infinite moon-move;
-  box-shadow: 0 0 13px 1px rgba(255,255,255,.5), inset -9px -2px 11px 4px rgba(0,0,0,.5);
+  box-shadow: 0 0 13px 1px rgba(255, 255, 255, 0.5),
+    inset -9px -2px 11px 4px rgba(0, 0, 0, 0.5);
 }
 
 @media screen and (max-width: 500px) {
@@ -72,16 +78,17 @@ $bxshadow-small: box-shadow(150);
     align-items: center;
     justify-content: center;
   }
-  
+
   .caesar {
     width: 150px;
     background-color: #ff92d0;
     height: 150px;
     border-radius: 50%;
     position: relative;
-    box-shadow: 0 0 30px 2px rgba(255,255,255,.15), inset -20px -2px 32px 15px rgba(0,0,0,.6);
+    box-shadow: 0 0 30px 2px rgba(255, 255, 255, 0.15),
+      inset -20px -2px 32px 15px rgba(0, 0, 0, 0.6);
   }
-  
+
   .moon {
     width: 25px;
     height: 25px;
@@ -92,7 +99,8 @@ $bxshadow-small: box-shadow(150);
     left: 50%;
     transform: translate(-50%, -50%);
     animation: 5s ease-in-out 0s normal none infinite moon-move;
-    box-shadow: 0 0 8px 1px rgba(255,255,255,.5), inset -5px -2px 8px 2px rgba(0,0,0,.5);
+    box-shadow: 0 0 8px 1px rgba(255, 255, 255, 0.5),
+      inset -5px -2px 8px 2px rgba(0, 0, 0, 0.5);
   }
 }
 
