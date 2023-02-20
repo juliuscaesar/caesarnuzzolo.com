@@ -61,8 +61,7 @@ function Terminal() {
         </div>
       ))}
       <p className={styles.code}>
-        🦄 <span className={styles.terminalTimeStamp}>{currentCmd.time}</span>{" "}
-        ✨{" "}
+        🦄 <span className={styles.terminalTimeStamp}>{currentCmd.time}</span> ✨{" "}
         <input
           className={styles.terminalInput}
           value={currentCmd.text || ""}
