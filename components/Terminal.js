@@ -18,13 +18,37 @@ function Terminal() {
   }, [cmds]);
 
   const parseResponse = (cmd) => {
-    if (cmd === "hello") {
-      return "caesar: Hi!";
+    let response = "";
+    switch (cmd) {
+      case "hello":
+        response = "Hi!";
+        break;
+      case "email":
+        response =
+          '<a href="mailto:caesarnuzzolo@gmail.com">caesarnuzzolo@gmail.com</a>';
+        break;
+      case "linkedin":
+        response =
+          '<a target="_blank" href="https://www.linkedin.com/in/caesar-nuzzolo-81b0a3231/">https://www.linkedin.com/in/caesar-nuzzolo-81b0a3231</a>';
+        break;
+      case "github":
+        response =
+          '<a target="_blank" href="https://github.com/juliuscaesar">github.com/juliuscaesar</a>';
+        break;
+      case "help":
+        response =
+          "<span>Enter one of the following commands:<br />✨ hello<br />✨ email<br />✨ linkedin<br />✨ github<br />✨ clear<br />✨ help</span>";
+        break;
+      case "clear":
+        setCmds([]);
+        break;
     }
-    if (cmd === "clear") {
-      setCmds([]);
+
+    if (response) {
+      return `<span>caesar: ${response}</span>`;
     }
-    return `caesar: command not found: ${cmd}`;
+
+    return `<span>caesar: command not found: ${cmd}</span><br /><span>Need help? Enter the command help for a list of commands.</span>`;
   };
 
   const handleKeypress = (e) => {
@@ -52,16 +76,23 @@ function Terminal() {
   return (
     <div className={styles.terminal_container} ref={containerRef}>
       {cmds.map((cmd, index) => (
-        <div key={`${cmd.date}-${cmd.text}-${index}`} className={styles.command}>
+        <div
+          key={`${cmd.date}-${cmd.text}-${index}`}
+          className={styles.command}
+        >
           <p className={styles.code}>
             🦄 <span className={styles.terminalTimeStamp}>{cmd.time}</span> ✨{" "}
             {cmd.text}
           </p>
-          <p className={styles.code}>&nbsp;&nbsp;&nbsp;&nbsp;{cmd.response}</p>
+          <div
+            className={styles.response}
+            dangerouslySetInnerHTML={{ __html: cmd.response }}
+          />
         </div>
       ))}
       <p className={styles.code}>
-        🦄 <span className={styles.terminalTimeStamp}>{currentCmd.time}</span> ✨{" "}
+        🦄 <span className={styles.terminalTimeStamp}>{currentCmd.time}</span>{" "}
+        ✨{" "}
         <input
           className={styles.terminalInput}
           value={currentCmd.text || ""}
