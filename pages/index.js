@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Terminal from "../components/Terminal";
-import styles from "@/styles/Home.module.css";
+import styles from "@/styles/Home.module.scss";
 import * as planet from "@/styles/Planet.module.scss";
 
 export default function Home() {
