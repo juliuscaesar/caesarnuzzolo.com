@@ -18,6 +18,9 @@ function Terminal() {
       case "hello":
         response = "Hi!";
         break;
+      case "bio":
+        response = "Check back later.";
+        break;
       case "email":
         response =
           '<a href="mailto:caesarnuzzolo@gmail.com">caesarnuzzolo@gmail.com</a>';
@@ -32,7 +35,7 @@ function Terminal() {
         break;
       case "help":
         response =
-          "<span>Enter one of the following commands:<br />✨ hello<br />✨ email<br />✨ linkedin<br />✨ github<br />✨ clear<br />✨ help</span>";
+          "<span>Enter one of the following commands:<br />✨ hello<br />✨ bio<br />✨ email<br />✨ linkedin<br />✨ github<br />✨ clear<br />✨ help</span>";
         break;
       case "clear":
         setCmds([]);
@@ -52,7 +55,7 @@ function Terminal() {
         time: new Date().toLocaleTimeString(),
         text: "",
       });
-      
+
       setCmds((cmds) => [
         ...cmds,
         {
