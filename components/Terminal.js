@@ -10,11 +10,6 @@ function Terminal() {
   useEffect(() => {
     inputRef.current.focus();
     containerRef.current.scrollTop = containerRef.current.scrollHeight;
-
-    setCurrentCmd({
-      time: new Date().toLocaleTimeString(),
-      text: "",
-    });
   }, [cmds]);
 
   const parseResponse = (cmd) => {
@@ -53,6 +48,11 @@ function Terminal() {
 
   const handleKeypress = (e) => {
     if (e.key === "Enter") {
+      setCurrentCmd({
+        time: new Date().toLocaleTimeString(),
+        text: "",
+      });
+      
       setCmds((cmds) => [
         ...cmds,
         {
