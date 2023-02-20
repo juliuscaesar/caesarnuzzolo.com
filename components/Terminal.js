@@ -14,7 +14,7 @@ function Terminal() {
     setCurrentCmd({
       time: new Date().toLocaleTimeString(),
       text: "",
-    })
+    });
   }, [cmds]);
 
   const parseResponse = (cmd) => {
@@ -59,7 +59,7 @@ function Terminal() {
       setCurrentCmd({
         time: new Date().toLocaleTimeString(),
         text: "",
-      })
+      });
       setCmds((cmds) => [
         ...cmds,
         {
@@ -81,33 +81,35 @@ function Terminal() {
   };
 
   return (
-    <div className={styles.terminal_container} ref={containerRef}>
-      {cmds.map((cmd, index) => (
-        <div
-          key={`${cmd.date}-${cmd.text}-${index}`}
-          className={styles.command}
-        >
-          <p className={styles.code}>
-            🦄 <span className={styles.terminalTimeStamp}>{cmd.time}</span> ✨{" "}
-            {cmd.text}
-          </p>
+    <div className={styles.terminalContainer}>
+      <div className={styles.terminalTop}><p>me@caesar: ~</p></div>
+      <div className={styles.terminalContent} ref={containerRef}>
+        {cmds.map((cmd, index) => (
           <div
-            className={styles.response}
-            dangerouslySetInnerHTML={{ __html: cmd.response }}
+            key={`${cmd.date}-${cmd.text}-${index}`}
+            className={styles.command}
+          >
+            <p className={styles.code}>
+              🦄 <span className={styles.terminalTimeStamp}>{cmd.time}</span> ✨{" "}
+              {cmd.text}
+            </p>
+            <div
+              className={styles.response}
+              dangerouslySetInnerHTML={{ __html: cmd.response }}
+            />
+          </div>
+        ))}
+        <p className={styles.code}>
+          🦄 <span className={styles.terminalTimeStamp}>{currentCmd.time}</span> ✨{" "}
+          <input
+            className={styles.terminalInput}
+            value={currentCmd.text || ""}
+            onChange={updateCmd}
+            onKeyDown={handleKeypress}
+            ref={inputRef}
           />
-        </div>
-      ))}
-      <p className={styles.code}>
-        🦄 <span className={styles.terminalTimeStamp}>{currentCmd.time}</span>{" "}
-        ✨{" "}
-        <input
-          className={styles.terminalInput}
-          value={currentCmd.text || ""}
-          onChange={updateCmd}
-          onKeyDown={handleKeypress}
-          ref={inputRef}
-        />
-      </p>
+        </p>
+      </div>
     </div>
   );
 }
