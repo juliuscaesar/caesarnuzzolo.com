@@ -24,7 +24,7 @@ export default function Home() {
           </div>
           <div className={styles.container}>
             <div className={planet.wrapper}>
-              <div className={planet.earth}></div>
+              <div className={planet.caesar}></div>
               <div className={planet.moon}></div>
             </div>
             <Terminal />
