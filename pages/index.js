@@ -21,6 +21,9 @@ export default function Home() {
             <h1>
               Hi, I&apos;m <span className={styles.name}>Caesar</span>.
             </h1>
+            <div className={styles.mobileBanner}>
+              <p>This site is best viewed on desktop.</p>
+            </div>
           </div>
           <div className={styles.container}>
             <div className={planet.wrapper}>
