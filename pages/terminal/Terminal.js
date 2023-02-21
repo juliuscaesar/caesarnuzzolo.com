@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import saveCmd from "./saveCmd";
-import { responses } from "./responses";
+import { responses } from "../../utils/responses";
 import * as styles from "../../styles/Terminal.module.scss";
 
 function Terminal() {
