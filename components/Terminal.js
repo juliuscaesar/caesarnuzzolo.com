@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import saveCmd from "../../services/saveCmd";
-import { responses } from "../../utils/responses";
-import * as styles from "../../styles/Terminal.module.scss";
+import saveCmd from "../services/saveCmd";
+import { responses } from "../utils/responses";
+import * as styles from "../styles/Terminal.module.scss";
 
 function Terminal() {
   const [cmds, setCmds] = useState([]);
