@@ -47,7 +47,6 @@ function Terminal() {
   const handleKeypress = async (e) => {
     if (currentCmd.text && e.key === "Enter") {
       const { time, user, text } = currentCmd;
-      await saveCmd(time, user, text);
       setCmds((cmds) => [
         ...cmds,
         {
@@ -62,6 +61,7 @@ function Terminal() {
         text: "",
         user: user,
       });
+      await saveCmd(time, user, text);
     }
   };
 
