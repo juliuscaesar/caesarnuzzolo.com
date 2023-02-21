@@ -23,13 +23,12 @@
 
 .name {
   color: #ff92d0;
-}
-
-.name:hover {
-  color: #ffffff;
-  text-decoration: underline;
-  text-decoration-color: #ff92d0;
-  text-decoration-thickness: 1rem;
+  &:hover {
+    color: #ffffff;
+    text-decoration: underline;
+    text-decoration-color: #ff92d0;
+    text-decoration-thickness: 1rem;
+  }
 }
 
 @media screen and (max-width: 1150px) {
