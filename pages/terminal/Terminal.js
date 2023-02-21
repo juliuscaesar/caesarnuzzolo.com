@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import saveCmd from "./saveCmd";
+import saveCmd from "../../services/saveCmd";
 import { responses } from "../../utils/responses";
 import * as styles from "../../styles/Terminal.module.scss";
 
